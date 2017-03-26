@@ -1,2 +1,1 @@
-install: cmake
 script: cmake CMakeLists.txt && make
