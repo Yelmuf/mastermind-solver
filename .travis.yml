@@ -3,7 +3,7 @@ sudo: true
 compiler:
   - g++
 before_install:
-  - yes | sudo add-apt-repository ppa:kalakris/cmake
+  - sudo add-apt-repository ppa:kalakris/cmake
   - sudo apt-get update -qq
 install: sudo apt-get update -qq
 script:
