@@ -1,9 +1,11 @@
 # mastermind-solver     [![Build Status](https://travis-ci.org/Yelmuf/mastermind-solver.svg?branch=master)](https://travis-ci.org/Yelmuf/mastermind-solver)
 Implementation of slightly modified Donald Knuth's five-guess algorithm in C/C++
-
+  
+(Program is written in study purposes to show the algorithm work)  
+  
 Based on
-* [Mastermind game on Wikipedia](http://en.wikipedia.org/wiki/Mastermind_(board_game))
-* [Explanation of list of possible solutions StackExchange](http://math.stackexchange.com/a/1193037)
+* [Mastermind game on Wikipedia](http://en.wikipedia.org/wiki/Mastermind_(board_game)#Five-guess_algorithm)
+* [Explanation of list of possible solutions on StackExchange](http://math.stackexchange.com/a/1193037)
 * [Explanation of minimax search on ProgrammingPraxis](http://programmingpraxis.com/2009/11/20/master-mind-part-2/)
 
 Dependencies
@@ -12,7 +14,7 @@ Dependencies
 
 Input | Output  
 --- | ---  
-The code for algorithm to guess | Number of guess iterations  
+The code for algorithm to guess | Number of guess iterations and code  
 
 #### Sample output:
 <pre>
