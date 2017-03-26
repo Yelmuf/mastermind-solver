@@ -1,5 +1,16 @@
 language: cpp
+sudo: false
+
 install:
+  ############################################################################
+  # All the dependencies are installed in ${TRAVIS_BUILD_DIR}/deps/
+  ############################################################################
+  - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
+  - mkdir -p ${DEPS_DIR} && cd ${DEPS_DIR}
+  
+  ############################################################################
+  # Install a recent CMake
+  ############################################################################
   - |
     if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
       if [[ -z "$(ls -A ${DEPS_DIR}/cmake/bin)" ]]; then
@@ -10,6 +21,8 @@ install:
     else
       if ! brew ls --version cmake &>/dev/null; then brew install cmake; fi
     fi
+
 script:
+  - cd ${TRAVIS_BUILD_DIR}
   - cmake CMakeLists.txt && make
 
