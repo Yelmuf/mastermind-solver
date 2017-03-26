@@ -1,20 +1,15 @@
-language: cpp
+language: c
+compiler:
+  - clang
+  - gcc
 
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - g++-4.9
-    
 install:
-  - export CXX="g++-4.9"
   ############################################################################
   # All the dependencies are installed in ${TRAVIS_BUILD_DIR}/deps/
   ############################################################################
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
   - mkdir -p ${DEPS_DIR} && cd ${DEPS_DIR}
-  
+
   ############################################################################
   # Install a recent CMake
   ############################################################################
@@ -32,4 +27,3 @@ install:
 script:
   - cd ${TRAVIS_BUILD_DIR}
   - cmake CMakeLists.txt && make
-
