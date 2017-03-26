@@ -1,21 +1,14 @@
-#language: cpp
-#compiler: 
-#  - g++
-install:
-  - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
-  - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
-  - |
-    if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
-      CMAKE_URL="https://cmake.org/files/v3.7/cmake-3.7.2.tar.gz"
-      mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
-      export PATH=${DEPS_DIR}/cmake/bin:${PATH}
-    fi
-  
-  # Go to the Root directory  
-  - cd ..
-
-# Build steps
+language: cpp
+sudo: true
+compiler:
+  - g++
+before_install:
+  - yes | sudo add-apt-repository ppa:kalakris/cmake
+  - sudo apt-get update -qq
+install: sudo apt-get update -qq
+before_script:
+  - BUILD_DIR=`pwd`/builds
+  - mkdir -p ${BUILD_DIR}
 script:
-  - mkdir build
-  - cd build
-  - ${DEPS_DIR}/cmake/bin/cmake ../CMakeLists.txt && make
+  - cmake ../CMakeLists.txt && make
+
