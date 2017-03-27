@@ -131,7 +131,7 @@ long testNumber(long testingNumber, long *b, long length, bool *active, int p) {
     long counter = 0;
     bool f = (composeNum(i, 5) / 10 + composeNum(i, 5)) < 5;
     for (long j = 0; j < length; j++) {
-      if (!active[i] && f) {
+      if (active[j] && f) {
         if (testCode(testingNumber, b[j], p) == composeNum(i, 5)) {
           counter++;
         }
@@ -252,15 +252,20 @@ int main() {
   }
 
   // According to the Donald Knuth's 5-steps algorithm, first guess should be
-  // 1122 (or 0011 in our system),
+  // 1122 (or 0011 in our system) for 4 places,
   // which is minimax number at start. You can change it to number you want or
-  // to look for it dynamically
-  long teste = 11;
+  // to look for it dynamically.
+  // So we generate first code according to number of places,
+  // e.g. 111222 for p=6 (000111 in our system)
+  long teste = 0;
+  for (int i = 0; i < p/2; i++) {
+    teste += 1*pow(10,i);
+  }
+
   // for (long i = 0; i < length; i++) {
   //   active[i] = 1;
   // }
-  // long teste = minimax(b, length, active, p); // 9 seconds on core-i5 for
-  // p=4, m=6, much more for bigger numbers
+  // long teste = minimax(b, length, active, p);
 
   for (int krok = 1; krok <= 10; krok++) {
 
