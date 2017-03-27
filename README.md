@@ -1,16 +1,15 @@
 # mastermind-solver     [![Build Status](https://travis-ci.org/Yelmuf/mastermind-solver.svg?branch=master)](https://travis-ci.org/Yelmuf/mastermind-solver)
 Implementation of slightly modified Donald Knuth's five-guess algorithm in C/C++
-  
+
 (Program is written in study purposes to show the algorithm work)  
-  
+
 Based on
 * [Mastermind game on Wikipedia](http://en.wikipedia.org/wiki/Mastermind_(board_game)#Five-guess_algorithm)
 * [Explanation of list of possible solutions on StackExchange](http://math.stackexchange.com/a/1193037)
 * [Explanation of minimax search on ProgrammingPraxis](http://programmingpraxis.com/2009/11/20/master-mind-part-2/)
 
 Dependencies
-* g++-4.9
-* cmake-3.6
+* clang / cmake
 
 Input | Output  
 --- | ---  
@@ -37,17 +36,17 @@ Here's a starting minimax: 11
 [2] Testing code 1223  
     It's not an answer! Searching numbers to choose from 256 active..  
     Excluding (1223, 11... )  
-  
+
 [3] Testing code 1334  
     It's not an answer! Searching numbers to choose from 51 active..  
     Excluding (1334, 3... )  
-  
+
 [4] Testing code 3153  
     It's not an answer! Searching numbers to choose from 4 active..  
     Excluding (3153, 21... )  
-  
+
 [5] Testing code 5143  
-  
+
 Your number is 5143  
 GGWP  
 </pre>

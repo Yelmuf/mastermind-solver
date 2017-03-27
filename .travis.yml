@@ -1,15 +1,7 @@
 language: c
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - gcc-4.8
-      
 compiler:
   - clang
-  - gcc
 
 script:
   - cd ${TRAVIS_BUILD_DIR}
