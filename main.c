@@ -127,7 +127,7 @@ long testNumber(long testingNumber, long *b, long length, bool *active, int p) {
   /// Find maximum score of number to test:
   /// https://programmingpraxis.com/2009/11/20/master-mind-part-2/
   long maximum = 0;
-  for (long i = 0; i < 40; i++) {
+  for (long i = 0; i < p*10; i++) {
     long counter = 0;
     bool f = (composeNum(i, 5) / 10 + composeNum(i, 5)) < 5;
     for (long j = 0; j < length; j++) {
